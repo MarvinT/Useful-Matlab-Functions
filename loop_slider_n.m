@@ -10,10 +10,23 @@ function b1 = loop_slider_n(k,kmin,kmax,n)
 %            for the second, etc.
 %
 %   For Example:
-%      b1 = loop_slider(1,kmin,kmax,1);
-%      k=get(b1,'Value')
-%      b2 = loop_slider(1,jmin,jmax,2);
-%      j=get(b2,'Value')
+%         k=1; kmin=1; kmax=5; hk=loop_slider_n(k,kmin,kmax,1);
+%         j=1; jmin=1; jmax=5; hj=loop_slider_n(j,jmin,jmax,2);
+%         h=1; hmin=1; hmax=5; hh=loop_slider_n(h,hmin,hmax,3);
+%         t = linspace(0,4*pi,10^5);
+%         while true
+%             if ~ishandle(hk)
+%                 break
+%             end
+%             k = round(get(hk, 'Value'));
+%             j = round(get(hj, 'Value'));
+%             h = round(get(hh, 'Value'));
+% 
+%             plot(t, k*sin(j*t).^h)
+%             title(sprintf('y = %d*sin(%dt)^{%d}', k, j, h))
+% 
+%             uiwait;
+%         end
 %
 % Marvin Thielk 2013
 % mthielk@salk.edu
