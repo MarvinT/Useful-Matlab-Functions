@@ -18,7 +18,7 @@ persistent strCR;           %   Carriage return pesistent variable
 
 % Vizualization parameters
 strPercentageLength = 10;   %   Length of percentage string (must be >5)
-strDotsMaximum      = 10;   %   The total number of dots in a progress bar
+strDotsMaximum      = 50;   %   The total number of dots in a progress bar
 
 %% Main 
 
@@ -35,7 +35,7 @@ elseif ~isempty(strCR) && ischar(c),
     fprintf([c '\n']);
 elseif isnumeric(c)
     % Progress bar - normal progress
-    c = floor(c);
+    %c = floor(c);
     percentageOut = [num2str(c) '%%'];
     percentageOut = [percentageOut repmat(' ',1,strPercentageLength-length(percentageOut)-1)];
     nDots = floor(c/100*strDotsMaximum);
